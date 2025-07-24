@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@import "boxicons/css/boxicons.min.css";
+
+body {
+  font-family: "Inter";
+  background-color: #f2f2f2;
+}
