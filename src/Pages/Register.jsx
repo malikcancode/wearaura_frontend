@@ -45,7 +45,7 @@ export default function Register() {
     <div className="h-screen grid grid-cols-1 md:grid-cols-2 bg-[#d9cbb3]">
       <div className="hidden md:block">
         <img
-          src="https://images.unsplash.com/photo-1521791136064-7986c2920216"
+          src="/loginpage.jpeg"
           alt="Register"
           className="h-full w-full object-cover"
         />

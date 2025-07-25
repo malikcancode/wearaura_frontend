@@ -15,6 +15,7 @@ import Register from "./Pages/Register";
 import Redirector from "./Components/Redirector";
 import Shop from "./Pages/Buyer/Shop";
 import ResetPasswordPage from "./Pages/ResetPasswordPage";
+import SetNewPassword from "./Pages/SetNewPassword";
 
 const isAuthenticated = () => {
   return !!localStorage.getItem("userToken");
@@ -33,7 +34,7 @@ function App() {
         <Route path="/verify-otp" element={<VerifyOtp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
-
+        <Route path="/reset-password/:token" element={<SetNewPassword />} />
         <Route
           element={
             <ProtectedRoute>

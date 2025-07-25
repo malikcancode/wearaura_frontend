@@ -114,7 +114,7 @@ export default function Login() {
 
       <div className="hidden md:block">
         <img
-          src="https://images.unsplash.com/photo-1521791136064-7986c2920216"
+          src="/loginpage.jpeg"
           alt="Login"
           className="h-full w-full object-cover"
         />
