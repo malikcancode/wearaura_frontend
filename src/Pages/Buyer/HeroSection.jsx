@@ -41,10 +41,10 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#5A463A] text-white px-8 py-3 rounded-lg hover:bg-[#4a3a2e] transition-colors">
+              <button className="bg-[#5A463A] text-white px-8 py-3 hover:bg-[#4a3a2e] transition-colors">
                 Shop Now
               </button>
-              <button className="border border-[#E0E0E0] text-[#606060] px-8 py-3 rounded-lg hover:border-[#5A463A] hover:text-[#5A463A] transition-colors">
+              <button className="border border-[#E0E0E0] text-[#606060] px-8 py-3 hover:border-[#5A463A] hover:text-[#5A463A] transition-colors">
                 Explore More
               </button>
             </div>

@@ -3,7 +3,6 @@ const PromotionalBanners = () => {
     <section className="py-16 bg-[#F2F2F2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-8">
-          {/* First Banner */}
           <div className="bg-gradient-to-r from-[#D9CBB3] to-[#F2F2F2] rounded-2xl p-8 lg:p-12 relative overflow-hidden">
             <div className="relative z-10">
               <h3 className="text-2xl lg:text-3xl font-bold text-[#3B2F27] mb-4">

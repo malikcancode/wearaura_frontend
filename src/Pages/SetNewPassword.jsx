@@ -44,7 +44,7 @@ function SetNewPassword() {
       <div className="flex items-center justify-center px-6">
         <form
           onSubmit={handleReset}
-          className="space-y-6 w-full max-w-md bg-white p-6 rounded shadow-md"
+          className="space-y-6 w-full max-w-md p-6 rounded"
         >
           <h2 className="text-3xl font-bold text-[#5a463a]">
             Create New Password

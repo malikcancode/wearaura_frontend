@@ -2,28 +2,28 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      role: "Interior Designer",
+      name: "Ava Thompson",
+      role: "Fashion Enthusiast",
       content:
-        "The quality of furniture from Furnish is exceptional. Every piece I've purchased has exceeded my expectations in both design and durability.",
+        "Absolutely love the quality of jackets from WearAura. The fit is perfect, and the craftsmanship is top-notch — I feel confident and stylish every time I wear it.",
       avatar: "https://avatar.iran.liara.run/public/43",
       rating: 5,
     },
     {
       id: 2,
-      name: "Michael Chen",
-      role: "Homeowner",
+      name: "Liam Rodriguez",
+      role: "Urban Stylist",
       content:
-        "Amazing customer service and fast delivery. The furniture arrived perfectly packaged and looks even better than in the photos.",
+        "WearAura delivers elegance and comfort in one. Their shirts are my go-to for both casual and professional looks. Quick delivery and beautifully packed too!",
       avatar: "https://avatar.iran.liara.run/public/43",
       rating: 5,
     },
     {
       id: 3,
-      name: "Emily Davis",
-      role: "Architect",
+      name: "Isabella Nguyen",
+      role: "Creative Director",
       content:
-        "I recommend Furnish to all my clients. Their modern designs and attention to detail make them stand out in the furniture industry.",
+        "The dresses from WearAura are pure sophistication. I wore one to a gala, and the compliments didn’t stop all night. They’ve mastered modern luxury.",
       avatar: "https://avatar.iran.liara.run/public/43",
       rating: 5,
     },
@@ -34,11 +34,11 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-[#3B2F27] mb-4">
-            Furnish Family Feedback
+            Family Feedback
           </h2>
           <p className="text-[#606060] max-w-2xl mx-auto">
-            Hear what our satisfied customers have to say about their experience
-            with our furniture and service.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+            libero distinctio deleniti accusantium consectetur.
           </p>
         </div>
 

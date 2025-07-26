@@ -16,6 +16,9 @@ import Redirector from "./Components/Redirector";
 import Shop from "./Pages/Buyer/Shop";
 import ResetPasswordPage from "./Pages/ResetPasswordPage";
 import SetNewPassword from "./Pages/SetNewPassword";
+import NewArrivals from "./Pages/Buyer/NewArrivals";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
 
 const isAuthenticated = () => {
   return !!localStorage.getItem("userToken");
@@ -43,9 +46,12 @@ function App() {
           }
         >
           <Route path="/homepage" element={<BuyerPage />} />
+          <Route path="/new-arrivals" element={<NewArrivals />} />
           <Route path="/seller-homepage" element={<SellerPage />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

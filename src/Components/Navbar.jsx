@@ -52,11 +52,11 @@ function Navbar() {
             <Link to="/shop" className="text-[#5A463A] font-semibold">
               Shop
             </Link>
-            <Link to="/new" className="text-[#5A463A] font-semibold">
+            <Link to="/new-arrivals" className="text-[#5A463A] font-semibold">
               New Arrivals
             </Link>
             <Link to="/about" className="text-[#5A463A] font-semibold">
-              About
+              About Us
             </Link>
             <Link to="/contact" className="text-[#5A463A] font-semibold">
               Contact Us
@@ -127,7 +127,7 @@ function Navbar() {
               className="block text-white text-xl font-semibold"
               onClick={() => setMenuOpen(false)}
             >
-              About
+              About Us
             </Link>
             <Link
               to="/contact"
@@ -137,7 +137,7 @@ function Navbar() {
               Contact Us
             </Link>
             <Link
-              to="/new"
+              to="/new-arrivals"
               className="block text-white text-xl font-semibold"
               onClick={() => setMenuOpen(false)}
             >
