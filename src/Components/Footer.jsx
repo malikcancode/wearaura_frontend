@@ -3,19 +3,14 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-[#5A463A] text-white py-10 px-6 md:px-20">
+    <footer className="bg-[#10212B] text-[#EFFBDB] py-10 px-6 md:px-20">
       <div className="grid gap-10 md:grid-cols-4 w-full">
-        {/* <div className="flex flex-col items-start">
-          <img
-            className="w-40 object-contain mb-2"
-            src="/svg.png"
-            alt="Brand Logo"
-          />
-        </div> */}
-
+        {/* About Section */}
         <div>
-          <h4 className="mb-2 font-semibold text-lg">About Us</h4>
-          <ul className="space-y-2 text-sm text-zinc-200">
+          <h4 className="mb-2 font-semibold text-lg text-[#8FA464]">
+            About Us
+          </h4>
+          <ul className="space-y-2 text-sm text-[#EFFBDB]/80">
             <li>
               <Link to="#">Our Story</Link>
             </li>
@@ -34,9 +29,12 @@ function Footer() {
           </ul>
         </div>
 
+        {/* Quick Links */}
         <div>
-          <h4 className="mb-2 font-semibold text-lg">Quick Links</h4>
-          <ul className="space-y-2 text-sm text-zinc-200">
+          <h4 className="mb-2 font-semibold text-lg text-[#8FA464]">
+            Quick Links
+          </h4>
+          <ul className="space-y-2 text-sm text-[#EFFBDB]/80">
             <li>
               <Link to="#">About Us</Link>
             </li>
@@ -55,9 +53,12 @@ function Footer() {
           </ul>
         </div>
 
+        {/* Products */}
         <div>
-          <h4 className="mb-2 font-semibold text-lg">Our Products</h4>
-          <ul className="space-y-2 text-sm text-zinc-200">
+          <h4 className="mb-2 font-semibold text-lg text-[#8FA464]">
+            Our Products
+          </h4>
+          <ul className="space-y-2 text-sm text-[#EFFBDB]/80">
             <li>
               <Link to="#">Shirts</Link>
             </li>
@@ -76,17 +77,20 @@ function Footer() {
           </ul>
         </div>
 
+        {/* Newsletter */}
         <div>
-          <h4 className="mb-2 font-semibold text-lg">Join Our Newsletter</h4>
-          <p className="text-xs mb-3 capitalize text-zinc-300">
+          <h4 className="mb-2 font-semibold text-lg text-[#8FA464]">
+            Join Our Newsletter
+          </h4>
+          <p className="text-xs mb-3 capitalize text-[#EFFBDB]/70">
             Sign up to hear about our latest sales, new arrivals & more.
           </p>
           <input
             type="email"
             placeholder="Enter your email"
-            className="p-2 px-4 w-full bg-transparent border border-white rounded-full text-white placeholder:text-sm placeholder:text-zinc-300 focus:outline-none"
+            className="p-2 px-4 w-full bg-transparent border border-[#EFFBDB] rounded-full text-[#EFFBDB] placeholder:text-sm placeholder:text-[#EFFBDB]/70 focus:outline-none"
           />
-          <button className="mt-3 bg-[#8b6146] hover:bg-[#7a5440] cursor-pointer transition px-6 py-2 rounded-full text-white font-semibold w-full">
+          <button className="mt-3 bg-[#8FA464] hover:bg-[#7A9056] transition px-6 py-2 rounded-full text-[#10212B] font-semibold w-full">
             Subscribe
           </button>
         </div>

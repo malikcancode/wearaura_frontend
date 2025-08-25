@@ -34,55 +34,75 @@ function Navbar() {
   }, [user]);
 
   return (
-    <nav className="p-2 relative">
+    <nav className="p-2 relative bg-[#10212B]">
       <div className="container mx-auto flex items-center justify-between">
+        {/* Logo + Links */}
         <div className="flex items-center space-x-20">
           <Link to="/homepage">
             <img
               className="w-20 h-auto object-cover cursor-pointer"
-              src="/logo.png"
+              src="/svg.png"
               alt="Logo"
             />
           </Link>
 
+          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-10">
-            <Link to="/homepage" className="text-[#5A463A] font-semibold">
+            <Link
+              to="/homepage"
+              className="text-[#EFFBDB]/90 font-semibold hover:text-[#8FA464] transition-colors"
+            >
               Home
             </Link>
-            <Link to="/shop" className="text-[#5A463A] font-semibold">
+            <Link
+              to="/shop"
+              className="text-[#EFFBDB]/90 font-semibold hover:text-[#8FA464] transition-colors"
+            >
               Shop
             </Link>
-            <Link to="/new-arrivals" className="text-[#5A463A] font-semibold">
+            <Link
+              to="/new-arrivals"
+              className="text-[#EFFBDB]/90 font-semibold hover:text-[#8FA464] transition-colors"
+            >
               New Arrivals
             </Link>
-            <Link to="/about" className="text-[#5A463A] font-semibold">
+            <Link
+              to="/about"
+              className="text-[#EFFBDB]/90 font-semibold hover:text-[#8FA464] transition-colors"
+            >
               About Us
             </Link>
-            <Link to="/contact" className="text-[#5A463A] font-semibold">
+            <Link
+              to="/contact"
+              className="text-[#EFFBDB]/90 font-semibold hover:text-[#8FA464] transition-colors"
+            >
               Contact Us
             </Link>
           </div>
         </div>
 
-        <div className="flex items-center space-x-4 text-white text-xl relative">
-          <i className="bg-[#5A463A] rounded-full p-1 bx bx-search cursor-pointer"></i>
-          <i className="bg-[#5A463A] rounded-full p-1 bx bx-cart cursor-pointer"></i>
+        {/* Icons + User */}
+        <div className="flex items-center space-x-4 text-[#EFFBDB]/80 text-xl relative">
+          <i className="rounded-full p-1 bx bx-search cursor-pointer hover:text-[#8FA464] transition-colors"></i>
+          <Link to="/cart">
+            <i className="rounded-full p-1 bx bx-cart cursor-pointer hover:text-[#8FA464] transition-colors"></i>
+          </Link>
           <div className="relative" ref={userPanelRef}>
             <i
-              className="bg-[#5A463A] rounded-full p-1 bx bx-user cursor-pointer"
+              className="rounded-full p-1 bx bx-user cursor-pointer hover:text-[#8FA464] transition-colors"
               onClick={() => setShowUserPanel((prev) => !prev)}
             ></i>
             {showUserPanel && user && (
-              <div className="absolute top-10 right-0 bg-white text-[#5A463A] shadow-lg rounded-lg p-4 w-64 z-50">
-                <p className="text-lg font-normal">{user.name}</p>
-                <p className="text-xs text-gray-600">{user.email}</p>
+              <div className="absolute top-10 right-0 bg-[#EFFBDB] text-[#10212B] shadow-lg p-4 w-64 z-50 ">
+                <p className="text-lg font-semibold">{user.name}</p>
+                <p className="text-xs text-[#10212B]/80">{user.email}</p>
                 <button
                   onClick={() => {
                     logout();
                     navigate("/login");
                     setShowUserPanel(false);
                   }}
-                  className="mt-4 bg-[#5A463A] cursor-pointer text-white px-4 py-1 rounded hover:bg-[#4a3b30] w-full"
+                  className="mt-4 bg-[#8FA464] hover:bg-[#8FA464]/90 cursor-pointer font-medium text-[#10212B] px-4 py-2 w-full  transition-colors"
                 >
                   Logout
                 </button>
@@ -90,18 +110,21 @@ function Navbar() {
             )}
           </div>
         </div>
+
+        {/* Mobile Menu Button */}
         <div
-          className="ml-4 text-[#5A463A] text-2xl cursor-pointer md:hidden"
+          className="ml-4 text-[#8FA464] text-2xl cursor-pointer md:hidden"
           onClick={() => setMenuOpen(true)}
         >
           <i className="bx bx-menu"></i>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-[#5A463A] z-[9999] p-6 flex flex-col items-end">
+        <div className="fixed top-0 left-0 w-full h-full bg-[#10212B] z-[9999] p-6 flex flex-col items-end">
           <button
-            className="text-[#5A463A] bg-white rounded-full p-2 text-2xl mb-10"
+            className="text-[#10212B] bg-[#EFFBDB] rounded-full p-2 text-2xl mb-10"
             onClick={() => setMenuOpen(false)}
           >
             <i className="bx bx-x"></i>
@@ -110,35 +133,35 @@ function Navbar() {
           <div className="space-y-8 flex flex-col items-center justify-center w-full">
             <Link
               to="/homepage"
-              className="block text-white text-xl font-semibold"
+              className="block text-[#EFFBDB] text-xl font-semibold hover:text-[#8FA464]"
               onClick={() => setMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/shop"
-              className="block text-white text-xl font-semibold"
+              className="block text-[#EFFBDB] text-xl font-semibold hover:text-[#8FA464]"
               onClick={() => setMenuOpen(false)}
             >
               Shop
             </Link>
             <Link
               to="/about"
-              className="block text-white text-xl font-semibold"
+              className="block text-[#EFFBDB] text-xl font-semibold hover:text-[#8FA464]"
               onClick={() => setMenuOpen(false)}
             >
               About Us
             </Link>
             <Link
               to="/contact"
-              className="block text-white text-xl font-semibold"
+              className="block text-[#EFFBDB] text-xl font-semibold hover:text-[#8FA464]"
               onClick={() => setMenuOpen(false)}
             >
               Contact Us
             </Link>
             <Link
               to="/new-arrivals"
-              className="block text-white text-xl font-semibold"
+              className="block text-[#EFFBDB] text-xl font-semibold hover:text-[#8FA464]"
               onClick={() => setMenuOpen(false)}
             >
               New Arrivals

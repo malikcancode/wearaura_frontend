@@ -4,9 +4,9 @@ import TopFilterbar from "../../Components/TopFilterbar";
 
 function Shop() {
   return (
-    <div className="min-h-screen bg-[#f2f2f2]">
+    <div className="min-h-screen bg-[#EFFBDB]">
       <HeroSection />
-      <div className="px-3 py-5">
+      <div className="px-3 py-5 bg-[#EFFBDB]">
         <TopFilterbar />
         <ProductGrid />
       </div>

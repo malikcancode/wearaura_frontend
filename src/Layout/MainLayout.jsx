@@ -4,13 +4,15 @@ import { Outlet } from "react-router-dom";
 import Footer from "../Components/Footer";
 
 function MainLayout() {
+  const role = localStorage.getItem("userRole");
+
   return (
     <div className="relative">
-      <Navbar />
-      <div className="min-h-screen">
+      {role === "buyer" && <Navbar />}
+      <div className="h-full">
         <Outlet />
       </div>
-      <Footer />
+      {role === "buyer" && <Footer />}
     </div>
   );
 }

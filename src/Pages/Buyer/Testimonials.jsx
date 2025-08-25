@@ -30,13 +30,13 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-[#effbdb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#3B2F27] mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#10212b] mb-4">
             Family Feedback
           </h2>
-          <p className="text-[#606060] max-w-2xl mx-auto">
+          <p className="text-[#10212b]/70 max-w-2xl mx-auto">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda
             libero distinctio deleniti accusantium consectetur.
           </p>
@@ -46,7 +46,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-[#F2F2F2] rounded-2xl p-6 hover:shadow-lg transition-shadow"
+              className="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow"
             >
               <div className="flex items-center space-x-1 mb-4">
                 {[...Array(5)].map((_, i) => (
@@ -54,14 +54,14 @@ const Testimonials = () => {
                     key={i}
                     className={`bx bxs-star text-sm ${
                       i < testimonial.rating
-                        ? "text-yellow-400"
+                        ? "text-[#8fa464]"
                         : "text-gray-300"
                     }`}
                   ></i>
                 ))}
               </div>
 
-              <p className="text-[#606060] mb-6 leading-relaxed">
+              <p className="text-[#10212b]/70 mb-6 leading-relaxed">
                 "{testimonial.content}"
               </p>
 
@@ -72,10 +72,10 @@ const Testimonials = () => {
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <h4 className="text-[#3B2F27] font-semibold">
+                  <h4 className="text-[#10212b] font-semibold">
                     {testimonial.name}
                   </h4>
-                  <p className="text-[#606060] text-sm">{testimonial.role}</p>
+                  <p className="text-[#8fa464] text-sm">{testimonial.role}</p>
                 </div>
               </div>
             </div>

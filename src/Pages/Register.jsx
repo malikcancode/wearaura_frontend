@@ -8,7 +8,6 @@ export default function Register() {
     name: "",
     email: "",
     password: "",
-    role: "",
   });
   const [loading, setLoading] = useState(false);
 
@@ -22,7 +21,9 @@ export default function Register() {
 
     try {
       const res = await axios.post("http://localhost:5000/api/auth/register", {
-        ...form,
+        name: form.name,
+        email: form.email,
+        password: form.password,
       });
 
       await axios.post("http://localhost:5000/api/otp/send-otp", {
@@ -42,7 +43,7 @@ export default function Register() {
   };
 
   return (
-    <div className="h-screen grid grid-cols-1 md:grid-cols-2 bg-[#d9cbb3]">
+    <div className="h-screen grid grid-cols-1 md:grid-cols-2 bg-[#10212B]">
       <div className="hidden md:block">
         <img
           src="/loginpage.jpeg"
@@ -53,76 +54,76 @@ export default function Register() {
 
       <div className="flex items-center justify-center px-6">
         <form onSubmit={handleSubmit} className="space-y-6 w-full max-w-md">
-          <h2 className="text-3xl font-bold text-[#5a463a]">
+          <h2 className="text-3xl font-bold text-[#EFFBDB]">
             Register Account
           </h2>
 
-          <div className="flex items-center border border-[#5a463a] px-3 py-2 rounded">
-            <i className="bx bx-user text-[#5a463a] text-xl mr-2"></i>
+          <div className="flex items-center border border-[#EFFBDB] px-3 py-2 rounded">
+            <i className="bx bx-user text-[#EFFBDB] text-xl mr-2"></i>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
               placeholder="Full Name"
-              className="w-full focus:outline-none bg-transparent text-[#5a463a] placeholder-[#5a463a]"
+              className="w-full focus:outline-none bg-transparent text-[#EFFBDB] "
               required
             />
           </div>
 
-          <div className="flex items-center border border-[#5a463a] px-3 py-2 rounded">
-            <i className="bx bx-envelope text-[#5a463a] text-xl mr-2"></i>
+          <div className="flex items-center border border-[#EFFBDB] px-3 py-2 rounded">
+            <i className="bx bx-envelope text-[#EFFBDB] text-xl mr-2"></i>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="Email"
-              className="w-full focus:outline-none bg-transparent text-[#5a463a] placeholder-[#5a463a]"
+              className="w-full focus:outline-none bg-transparent text-[#EFFBDB] "
               required
             />
           </div>
 
-          <div className="flex items-center border border-[#5a463a] px-3 py-2 rounded">
-            <i className="bx bx-lock-alt text-[#5a463a] text-xl mr-2"></i>
+          <div className="flex items-center border border-[#EFFBDB] px-3 py-2 rounded">
+            <i className="bx bx-lock-alt text-[#EFFBDB] text-xl mr-2"></i>
             <input
               type="password"
               name="password"
               value={form.password}
               onChange={handleChange}
               placeholder="Password"
-              className="w-full focus:outline-none bg-transparent text-[#5a463a] placeholder-[#5a463a]"
+              className="w-full focus:outline-none bg-transparent text-[#EFFBDB]"
               required
             />
           </div>
-
+          {/* 
           <div className="flex items-center border border-[#5a463a] px-3 py-2 rounded">
-            <i className="bx bx-user-check text-[#5a463a] text-xl mr-2"></i>
+            <i className="bx bx-user-check text-[#EFFBDB] text-xl mr-2"></i>
             <select
               name="role"
               value={form.role}
               onChange={handleChange}
-              className="w-full bg-transparent text-[#5a463a] focus:outline-none"
+              className="w-full bg-transparent text-[#EFFBDB] focus:outline-none"
               required
             >
               <option value="">Select Role</option>
               <option value="buyer">Buyer</option>
               <option value="seller">Seller</option>
             </select>
-          </div>
+          </div> */}
 
           <button
             disabled={loading}
             type="submit"
-            className="bg-[#5a463a] w-full py-2 text-white font-semibold rounded hover:opacity-90 transition"
+            className="bg-[#EFFBDB] w-full py-2 border border-[#EFFBDB] text-[#10212B] font-semibold rounded hover:opacity-90 transition cursor-pointer"
           >
             {loading ? "Registering..." : "Register"}
           </button>
 
-          <div className="text-sm text-[#5a463a] text-center space-y-2">
+          <div className="text-sm text-[#EFFBDB] text-center space-y-2">
             <p>
               Already have an account?{" "}
-              <Link to="/login" className="underline hover:text-[#3e2f25]">
+              <Link to="/login" className="underline ">
                 Login
               </Link>
             </p>

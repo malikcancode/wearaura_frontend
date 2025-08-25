@@ -1,9 +1,13 @@
-import React, { useEffect, useState, useContext } from "react";
+import { useParams } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { CartContext } from "../../Context/CartContext";
 
-function NewArrivals() {
+const CategoryProductsPage = () => {
+  const { categoryName } = useParams();
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
   const [selectedSizes, setSelectedSizes] = useState({});
 
@@ -15,39 +19,40 @@ function NewArrivals() {
     );
 
   useEffect(() => {
-    const fetchNewArrivals = async () => {
+    const fetchCategoryProducts = async () => {
       try {
+        setLoading(true);
+        setError("");
         const res = await axios.get(
-          "http://localhost:5000/api/products?tag=latest"
+          `http://localhost:5000/api/products?category=${categoryName}`
         );
         setProducts(res.data.products);
       } catch (err) {
-        console.error("Error fetching latest arrivals:", err);
+        setError("Error fetching category products");
+      } finally {
+        setLoading(false);
       }
     };
 
-    fetchNewArrivals();
-  }, []);
+    fetchCategoryProducts();
+  }, [categoryName]);
 
   return (
-    <section className="py-16 bg-[#EFFBDB]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Heading */}
-        <div className="flex justify-between items-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#10212B]">
-            Discover Our Latest Arrivals
-          </h2>
-        </div>
+    <section className="py-16 bg-[#EFFBDB] px-4">
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <h2 className="text-3xl lg:text-4xl font-bold text-[#10212B] mb-8">
+          {categoryName} Collection
+        </h2>
 
-        {/* Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {products
-            .filter(
-              (product) =>
-                Array.isArray(product.tags) &&
-                product.tags.includes("New Arrivals")
-            )
-            .map((product) => (
+        {/* Loading / Error / Products */}
+        {loading ? (
+          <p className="text-center text-[#10212B]">Loading products...</p>
+        ) : error ? (
+          <p className="text-center text-red-500">{error}</p>
+        ) : products.length > 0 ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {products.map((product) => (
               <div
                 key={product._id}
                 className="group relative flex flex-col rounded-2xl overflow-hidden border border-[#8FA464]/30 bg-white shadow-md hover:shadow-lg transition-all duration-300"
@@ -66,7 +71,7 @@ function NewArrivals() {
                   )}
                 </div>
 
-                {/* Card Content */}
+                {/* Content */}
                 <div className="flex flex-col flex-1 px-5 py-4">
                   {/* Name */}
                   <h5 className="text-lg font-semibold text-[#10212B] mb-1 truncate">
@@ -111,6 +116,7 @@ function NewArrivals() {
                             [product._id]: e.target.value,
                           }))
                         }
+                        onClick={(e) => e.stopPropagation()}
                         className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-[#8FA464] focus:outline-none"
                       >
                         {product.sizes.map((size) => (
@@ -121,7 +127,6 @@ function NewArrivals() {
                       </select>
                     </div>
                   )}
-
                   <button
                     onClick={() => {
                       const selectedSize =
@@ -130,7 +135,7 @@ function NewArrivals() {
                         null;
 
                       if (isInCart(product)) {
-                        removeFromCart(product._id, null, selectedSize); // ✅ pass productId & size
+                        removeFromCart(product._id, null, selectedSize); // pass productId & size
                       } else {
                         addToCart({
                           productId: product._id,
@@ -152,55 +157,20 @@ function NewArrivals() {
                         : "bg-[#10212B] hover:bg-[#8FA464] hover:text-[#10212B]"
                     }`}
                   >
-                    {isInCart(product) ? (
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
-                        Remove
-                      </>
-                    ) : (
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 
-        5M7 13l-2.293 2.293c-.63.63-.184 
-        1.707.707 1.707H17m0 0a2 2 0 100 
-        4 2 2 0 000-4zm-8 2a2 2 0 11-4 
-        0 2 2 0 014 0z"
-                          />
-                        </svg>
-                        Add to Cart
-                      </>
-                    )}
+                    {isInCart(product) ? "Remove" : "Add to Cart"}
                   </button>
                 </div>
               </div>
             ))}
-        </div>
+          </div>
+        ) : (
+          <p className="text-center text-[#10212B]">
+            No products found in this category.
+          </p>
+        )}
       </div>
     </section>
   );
-}
+};
 
-export default NewArrivals;
+export default CategoryProductsPage;

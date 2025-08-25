@@ -37,7 +37,6 @@ export default function Login() {
       });
 
       if (res.data.role === "buyer") navigate("/homepage");
-      else if (res.data.role === "seller") navigate("/seller-homepage");
       else if (res.data.role === "admin") navigate("/admindashboard");
       else navigate("/login");
     } catch (err) {
@@ -51,33 +50,33 @@ export default function Login() {
   };
 
   return (
-    <div className="h-screen grid grid-cols-1 md:grid-cols-2 bg-[#d9cbb3]">
+    <div className="h-screen grid grid-cols-1 md:grid-cols-2 bg-[#10212B]">
       <div className="flex items-center justify-center px-6">
         <form onSubmit={handleLogin} className="space-y-6 w-full max-w-md">
-          <h2 className="text-3xl font-bold text-[#5a463a]">Login</h2>
+          <h2 className="text-3xl font-bold text-[#EFFBDB]">Login</h2>
 
-          <div className="flex items-center border border-[#5a463a] px-3 py-2 rounded">
-            <i className="bx bx-envelope text-[#5a463a] text-xl mr-2"></i>
+          <div className="flex items-center border border-[#EFFBDB] px-3 py-2 rounded">
+            <i className="bx bx-envelope text-[#EFFBDB] text-xl mr-2"></i>
             <input
               type="email"
               name="email"
               placeholder="Email"
               value={form.email}
               onChange={handleChange}
-              className="w-full focus:outline-none bg-transparent text-[#5a463a] placeholder-[#5a463a]"
+              className="w-full focus:outline-none bg-transparent text-[#EFFBDB] placeholder-[#EFFBDB]"
               required
             />
           </div>
 
-          <div className="flex items-center border border-[#5a463a] px-3 py-2 rounded">
-            <i className="bx bx-lock-alt text-[#5a463a] text-xl mr-2"></i>
+          <div className="flex items-center border border-[#EFFBDB] px-3 py-2 rounded">
+            <i className="bx bx-lock-alt text-[#EFFBDB] text-xl mr-2"></i>
             <input
               type="password"
               value={form.password}
               onChange={handleChange}
               name="password"
               placeholder="Password"
-              className="w-full focus:outline-none bg-transparent text-[#5a463a] placeholder-[#5a463a]"
+              className="w-full focus:outline-none bg-transparent text-[#EFFBDB] placeholder-[#EFFBDB]"
               required
             />
           </div>
@@ -89,23 +88,20 @@ export default function Login() {
           <button
             type="submit"
             disabled={loading}
-            className="bg-[#5a463a] w-full py-2 text-white font-semibold rounded hover:opacity-90 transition"
+            className="bg-[#EFFBDB] w-full cursor-pointer py-2 text-[#10212B] font-semibold rounded hover:opacity-90 "
           >
             {loading ? "Logging in..." : "Login"}
           </button>
 
-          <div className="text-sm text-[#5a463a] text-center mt-2">
-            <Link
-              to="/reset-password"
-              className="underline hover:text-[#3e2f25]"
-            >
+          <div className="text-sm text-[#EFFBDB] text-center mt-2">
+            <Link to="/reset-password" className="underline ">
               Forgot Password?
             </Link>
           </div>
 
-          <div className="text-sm text-[#5a463a] text-center">
+          <div className="text-sm text-[#EFFBDB] text-center">
             Don’t have an account?{" "}
-            <Link to="/" className="underline hover:text-[#3e2f25]">
+            <Link to="/register" className="underline">
               Create account
             </Link>
           </div>

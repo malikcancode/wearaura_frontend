@@ -2,7 +2,8 @@ import React from "react";
 
 function Contact() {
   return (
-    <section className="bg-[#fdfaf7] text-[#5A463A] h-screen flex flex-col md:flex-row">
+    <section className="bg-[#effbdb] text-[#10212b] h-screen flex flex-col md:flex-row">
+      {/* Left image section */}
       <div className="hidden md:block w-1/2 h-full">
         <img
           src="/cat.jpg"
@@ -11,12 +12,13 @@ function Contact() {
         />
       </div>
 
+      {/* Right form section */}
       <div className="w-full md:w-1/2 h-full flex items-center justify-center px-6 md:px-16">
         <div className="w-full max-w-lg">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">
             Contact Us
           </h2>
-          <p className="text-[#6e5b50] mb-8 leading-relaxed">
+          <p className="text-[#10212b] mb-8 leading-relaxed opacity-80">
             Have a question, a custom order, or just want to say hello? We'd
             love to hear from you.
           </p>
@@ -27,7 +29,7 @@ function Contact() {
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full px-4 py-2 border border-[#e0d8d2] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A463A]"
+                className="w-full px-4 py-2 border border-[#8fa464] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8fa464]"
               />
             </div>
 
@@ -36,7 +38,7 @@ function Contact() {
               <input
                 type="email"
                 placeholder="you@example.com"
-                className="w-full px-4 py-2 border border-[#e0d8d2] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A463A]"
+                className="w-full px-4 py-2 border border-[#8fa464] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8fa464]"
               />
             </div>
 
@@ -45,13 +47,13 @@ function Contact() {
               <textarea
                 rows="4"
                 placeholder="Write your message here..."
-                className="w-full px-4 py-2 border border-[#e0d8d2] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A463A]"
+                className="w-full px-4 py-2 border border-[#8fa464] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8fa464]"
               ></textarea>
             </div>
 
             <button
               type="submit"
-              className="bg-[#5A463A] text-white px-6 py-2  hover:bg-[#4a3c34] transition"
+              className="bg-[#10212b] text-[#effbdb] px-6 py-2 rounded-lg font-medium hover:bg-[#8fa464] hover:text-[#10212b] transition"
             >
               Send Message
             </button>

@@ -1,11 +1,7 @@
 import NewArrivals from "./NewArrivals";
 
 const FeaturedProducts = () => {
-  return (
-    <section className="py-16 h-full bg-[#F2F2F2]">
-      <NewArrivals />
-    </section>
-  );
+  return <NewArrivals />;
 };
 
 export default FeaturedProducts;

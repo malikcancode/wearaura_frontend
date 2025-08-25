@@ -28,29 +28,29 @@ function ResetPasswordPage() {
   };
 
   return (
-    <div className="h-screen grid grid-cols-1 md:grid-cols-2 bg-[#d9cbb3]">
+    <div className="h-screen grid grid-cols-1 md:grid-cols-2 bg-[#10212B]">
       <div className="flex items-center justify-center px-6">
         <form onSubmit={handleSubmit} className="space-y-6 w-full max-w-md">
-          <h2 className="text-3xl font-bold text-[#5a463a]">Reset Password</h2>
+          <h2 className="text-3xl font-bold text-[#EFFBDB]">Reset Password</h2>
 
-          <p className="text-[#5a463a] text-sm">
+          <p className="text-[#EFFBDB] text-sm">
             Enter your email and we’ll send you a reset link.
           </p>
 
-          <div className="flex items-center border border-[#5a463a] px-3 py-2 rounded">
-            <i className="bx bx-envelope text-[#5a463a] text-xl mr-2"></i>
+          <div className="flex items-center border border-[#EFFBDB] px-3 py-2 rounded">
+            <i className="bx bx-envelope text-[#EFFBDB] text-xl mr-2"></i>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="w-full focus:outline-none bg-transparent text-[#5a463a] placeholder-[#5a463a]"
+              className="w-full focus:outline-none bg-transparent text-[#EFFBDB] placeholder-[#EFFBDB]"
               required
             />
           </div>
 
           {message && (
-            <div className="text-[#5a463a] text-sm text-center">{message}</div>
+            <div className="text-[#EFFBDB] text-sm text-center">{message}</div>
           )}
           {error && (
             <div className="text-red-600 text-sm text-center">{error}</div>
@@ -59,13 +59,13 @@ function ResetPasswordPage() {
           <button
             type="submit"
             disabled={loading}
-            className="bg-[#5a463a] w-full py-2 text-white font-semibold rounded hover:opacity-90 transition"
+            className="bg-[#EFFBDB] w-full py-2 text-[#10212B] font-semibold rounded hover:opacity-90 transition"
           >
             {loading ? "Sending..." : "Send Reset Link"}
           </button>
 
-          <div className="text-sm text-[#5a463a] text-center mt-2">
-            <Link to="/login" className="underline hover:text-[#3e2f25]">
+          <div className="text-sm text-[#EFFBDB] text-center mt-2">
+            <Link to="/login" className="underline">
               Back to Login
             </Link>
           </div>

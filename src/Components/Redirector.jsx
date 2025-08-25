@@ -6,8 +6,13 @@ function Redirector() {
 
   useEffect(() => {
     const token = localStorage.getItem("userToken");
-    if (token) {
-      navigate("/homepage");
+    const role = localStorage.getItem("userRole");
+
+    if (token && role) {
+      if (role === "admin") navigate("/admindashboard");
+      else if (role === "seller") navigate("/seller-homepage");
+      else if (role === "buyer") navigate("/homepage");
+      else navigate("/login");
     } else {
       navigate("/register");
     }
